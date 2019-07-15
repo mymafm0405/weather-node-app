@@ -9,7 +9,7 @@ const forecast = (latitude, longitude, callback) => {
         } else if (body.error) {
             callback('Unable to find your location', undefined)
         } else {
-            callback(undefined, body.daily.data[0].summary + chalk.green.inverse('It is currently ' + body.currently.temperature + ' degrees out. There is a ' + body.currently.precipIntensity + '% chance of rain.'))
+            callback(undefined, body.daily.data[0].summary + 'It is currently ' + body.currently.temperature + ' degrees out. The Max temp is '+ body.daily.data[0].temperatureMax + ', and the Min temp is ' + body.daily.data[0].temperatureMin + '. There is a ' + body.currently.precipIntensity + '% chance of rain.')
         }
     })
     
